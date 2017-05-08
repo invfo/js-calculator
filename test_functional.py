@@ -11,11 +11,19 @@ class TestCalculator():
         return self.browser.find_element_by_xpath(
             '//div[@id="display"]/p').text
     
-    def setup(self):
-        self.browser = webdriver.Chrome()
-        self.browser.get(
+    @classmethod
+    def setup_class(cls):
+        cls.browser = webdriver.Chrome()
+        cls.browser.get(
             'file://' + os.path.join(os.getcwd(), 'index.html')
         )
+    
+    @classmethod
+    def teardown_class(cls):
+        cls.browser.close()
+        
+    def setup(self):
+        self.browser.refresh()
     
     def test_zero_displayed_when_loaded(self):
         assert self.get_display_content() == '0'
@@ -47,6 +55,3 @@ class TestCalculator():
         self.push_button('1')
         self.push_button('clear')
         assert self.get_display_content() == '0'
-        
-    def teardown(self):
-        self.browser.close()
