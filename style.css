@@ -1,0 +1,27 @@
+#container {
+    display: flex;
+    border: 1px black solid;
+    border-radius: 5px;
+    flex-direction: column;
+    width: 200px;
+    align-items: center;
+    padding-bottom: 20px;
+    background-color: darkturquoise;
+}
+
+#display {
+    background-color: green;
+    width: 150px;
+}
+
+
+.row {
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+button {
+    width: 30px;
+}
