@@ -47,6 +47,9 @@ equalButton.addEventListener('click', function(e) {
             case '*':
                 result = parseInt(displayedValue) * parseInt(memorizedValue);
                 break;
+            case '-':
+                result = parseInt(memorizedValue) - parseInt(displayedValue);
+                break;
         }
         
         memorizedValue = null;
@@ -62,3 +65,11 @@ multiplyButton.addEventListener('click', function(e) {
     lastOperation = '*'
     startNewInput = true;
 });
+
+subtractButton = document.getElementById('-');
+subtractButton.addEventListener('click', function(e) {
+    memorizedValue = displayedValue;
+    lastOperation = '-'
+    startNewInput = true;
+});
+

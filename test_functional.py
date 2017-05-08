@@ -104,3 +104,18 @@ class TestCalculator():
         self.push_button('3')
         self.push_button('=')
         assert self.get_display_content() == '21'
+        
+    def test_subtraction(self):
+        self.push_button('5')
+        self.push_button('-')
+        self.push_button('2')
+        self.push_button('=')
+        assert self.get_display_content() == '3'
+        
+    def test_subtraction_with_negative_result(self):
+        self.push_button('7')
+        self.push_button('-')
+        self.push_button('1')
+        self.push_button('2')
+        self.push_button('=')
+        assert self.get_display_content() == '-5'
