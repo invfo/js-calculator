@@ -21,6 +21,7 @@ for (var i = 0; i < 10; i++) {
 
 clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', function(e) {
+  startNewInput = true;
     displayedValue = '0';
     document.querySelector('p').textContent = displayedValue;
 });

@@ -161,3 +161,9 @@ class TestCalculator():
         self.push_button('0')
         self.push_button('=')
         assert self.get_display_content() == 'ERROR'
+
+    def test_input_after_clear(self):
+        self.push_button('9')
+        self.push_button('clear')
+        self.push_button('1')
+        assert self.get_display_content() == '1'
