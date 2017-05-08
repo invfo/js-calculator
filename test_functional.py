@@ -167,3 +167,20 @@ class TestCalculator():
         self.push_button('clear')
         self.push_button('1')
         assert self.get_display_content() == '1'
+
+    def test_input_non_integer(self):
+        self.push_button('1')
+        self.push_button('.')
+        self.push_button('2')
+        assert self.get_display_content() == '1.2'
+
+    def test_input_non_integer_with_zero_int_part(self):
+        self.push_button('.')
+        self.push_button('3')
+        assert self.get_display_content() == '0.3'
+
+    def test_cannot_input_more_than_one_dot(self):
+        self.push_button('1')
+        self.push_button('.')
+        self.push_button('.')
+        assert self.get_display_content() == '1.'
