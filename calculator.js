@@ -34,8 +34,10 @@ plusButton.addEventListener('click', function(e) {
 
 equalButton = document.getElementById('=');
 equalButton.addEventListener('click', function(e) {
-    var result = parseInt(displayedValue) + parseInt(memorizedValue);
-    memorizedValue = null;
-    displayedValue = result;
-    document.querySelector('p').textContent = displayedValue;
+    if (memorizedValue != null) {
+        var result = parseInt(displayedValue) + parseInt(memorizedValue);
+        memorizedValue = null;
+        displayedValue = result;
+        document.querySelector('p').textContent = displayedValue;
+    }
 });

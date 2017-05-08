@@ -83,3 +83,7 @@ class TestCalculator():
         self.push_button('3')
         self.push_button('=')
         assert self.get_display_content() == '6'
+    
+    def test_when_press_equals_displays_zero(self):
+        self.push_button('=')
+        assert self.get_display_content() == '0'
