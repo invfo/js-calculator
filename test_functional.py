@@ -42,7 +42,7 @@ class TestCalculator():
         self.push_button('1')
         assert self.get_display_content() == '1'
         
-    def test_when_press_one_two_displays_twelve(self):
+    def test_two_digit_input(self):
         self.push_button('1')
         self.push_button('2')
         assert self.get_display_content() == '12'
@@ -51,7 +51,7 @@ class TestCalculator():
         self.push_button('clear')
         assert self.get_display_content() == '0'
         
-    def test_when_press_one_then_clear_displays_zero(self):
+    def test_clear_input_digit(self):
         self.push_button('1')
         self.push_button('clear')
         assert self.get_display_content() == '0'
@@ -67,14 +67,14 @@ class TestCalculator():
         self.push_button('2')
         assert self.get_display_content() == '2'
         
-    def test_when_press_one_plus_one_equals_display_two(self):
+    def test_addition(self):
         self.push_button('1')
         self.push_button('+')
         self.push_button('1')
         self.push_button('=')
         assert self.get_display_content() == '2'
         
-    def test_when_press_one_plus_two_equals_plus_three_equals_displays_six(self):
+    def test_chained_addition(self):
         self.push_button('1')
         self.push_button('+')
         self.push_button('2')
