@@ -10,5 +10,11 @@ for (var i = 0; i < 10; i++) {
             displayedValue += e.target.id;
         }
         document.querySelector('p').textContent = displayedValue;
-    })
+    });
 }
+
+clearButton = document.getElementById('clear')
+clearButton.addEventListener('click', function(e) {
+    displayedValue = '0';
+    document.querySelector('p').textContent = displayedValue;
+});

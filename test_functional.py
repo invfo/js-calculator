@@ -39,6 +39,14 @@ class TestCalculator():
         self.push_button('2')
         assert self.get_display_content() == '12'
 
+    def test_when_load_and_press_clear_displays_zero(self):
+        self.push_button('clear')
+        assert self.get_display_content() == '0'
+        
+    def test_when_press_one_then_clear_displays_zero(self):
+        self.push_button('1')
+        self.push_button('clear')
+        assert self.get_display_content() == '0'
         
     def teardown(self):
         self.browser.close()
