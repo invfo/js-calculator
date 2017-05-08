@@ -73,3 +73,13 @@ class TestCalculator():
         self.push_button('1')
         self.push_button('=')
         assert self.get_display_content() == '2'
+        
+    def test_when_press_one_plus_two_equals_plus_three_equals_displays_six(self):
+        self.push_button('1')
+        self.push_button('+')
+        self.push_button('2')
+        self.push_button('=')
+        self.push_button('+')
+        self.push_button('3')
+        self.push_button('=')
+        assert self.get_display_content() == '6'
