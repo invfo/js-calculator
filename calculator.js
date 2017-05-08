@@ -37,9 +37,9 @@ plusButton.addEventListener('click', function(e) {
 equalButton = document.getElementById('=');
 equalButton.addEventListener('click', function(e) {
     if (memorizedValue != null) {
-        
+
         var result;
-        
+
         switch(lastOperation) {
             case '+':
                 result = parseInt(displayedValue) + parseInt(memorizedValue);
@@ -50,14 +50,24 @@ equalButton.addEventListener('click', function(e) {
             case '-':
                 result = parseInt(memorizedValue) - parseInt(displayedValue);
                 break;
+            case '/':
+                result = parseInt(memorizedValue) / parseInt(displayedValue);
+                result = +result.toFixed(5);
+                break;
         }
-        
+
+        if (result == 'Infinity') {
+          startNewInput = true;
+          displayedValue = 'ERROR';
+        } else {
+          displayedValue = result;
+        }
+
         if (result == 0) {
             startNewInput = true;
         }
         memorizedValue = null;
         lastOperation = null;
-        displayedValue = result;
         document.querySelector('p').textContent = displayedValue;
     }
 });
@@ -76,3 +86,9 @@ subtractButton.addEventListener('click', function(e) {
     startNewInput = true;
 });
 
+divideButton = document.getElementById('/');
+divideButton.addEventListener('click', function(e) {
+    memorizedValue = displayedValue;
+    lastOperation = '/'
+    startNewInput = true;
+});
