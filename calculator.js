@@ -4,24 +4,26 @@ var startNewInput = true;
 var displayedValue = '0';
 document.querySelector('p').textContent = displayedValue;
 
+function manageDigitInput(e) {
+    if (startNewInput == true) {
+        displayedValue = e.target.id;
+        if (displayedValue != '0') {
+            startNewInput = false;
+        }
+    } else {
+        displayedValue += e.target.id;
+    }
+    document.querySelector('p').textContent = displayedValue;
+}
+
 for (var i = 0; i < 10; i++) {
     var digitButton = document.getElementById(i);
-    digitButton.addEventListener('click', function(e) {
-        if (startNewInput == true) {
-            displayedValue = e.target.id;
-            if (displayedValue != '0') {
-                startNewInput = false;
-            }
-        } else {
-            displayedValue += e.target.id;
-        }
-        document.querySelector('p').textContent = displayedValue;
-    });
+    digitButton.addEventListener('click', manageDigitInput);
 }
 
 clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', function(e) {
-  startNewInput = true;
+    startNewInput = true;
     displayedValue = '0';
     document.querySelector('p').textContent = displayedValue;
 });
