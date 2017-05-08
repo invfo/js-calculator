@@ -87,3 +87,20 @@ class TestCalculator():
     def test_when_press_equals_displays_zero(self):
         self.push_button('=')
         assert self.get_display_content() == '0'
+        
+    def test_multiplication(self):
+        self.push_button('2')
+        self.push_button('x')
+        self.push_button('4')
+        self.push_button('=')
+        assert self.get_display_content() == '8'
+        
+    def test_addition_then_multiplication(self):
+        self.push_button('2')
+        self.push_button('+')
+        self.push_button('5')
+        self.push_button('=')
+        self.push_button('x')
+        self.push_button('3')
+        self.push_button('=')
+        assert self.get_display_content() == '21'

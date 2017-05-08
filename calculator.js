@@ -1,4 +1,5 @@
 var memorizedValue = null;
+var lastOperation = null;
 var startNewInput = true;
 var displayedValue = '0';
 document.querySelector('p').textContent = displayedValue;
@@ -28,6 +29,7 @@ clearButton.addEventListener('click', function(e) {
 plusButton = document.getElementById('+');
 plusButton.addEventListener('click', function(e) {
     memorizedValue = displayedValue;
+    lastOperation = '+'
     startNewInput = true;
 });
 
@@ -35,9 +37,28 @@ plusButton.addEventListener('click', function(e) {
 equalButton = document.getElementById('=');
 equalButton.addEventListener('click', function(e) {
     if (memorizedValue != null) {
-        var result = parseInt(displayedValue) + parseInt(memorizedValue);
+        
+        var result;
+        
+        switch(lastOperation) {
+            case '+':
+                result = parseInt(displayedValue) + parseInt(memorizedValue);
+                break;
+            case '*':
+                result = parseInt(displayedValue) * parseInt(memorizedValue);
+                break;
+        }
+        
         memorizedValue = null;
+        lastOperation = null;
         displayedValue = result;
         document.querySelector('p').textContent = displayedValue;
     }
+});
+
+multiplyButton = document.getElementById('x');
+multiplyButton.addEventListener('click', function(e) {
+    memorizedValue = displayedValue;
+    lastOperation = '*'
+    startNewInput = true;
 });
