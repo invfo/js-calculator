@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'MaSuperPolice';
+    
+    
+    src: url('MaSuperPolice.eot') format('eot'),
+         url('MaSuperPolice.woff') format('woff'),
+         url('MaSuperPolice.ttf') format('truetype'),
+         url('MaSuperPolice.svg') format('svg');
+}
+
 #container {
     display: flex;
     border: 1px black solid;
@@ -6,22 +16,39 @@
     width: 200px;
     align-items: center;
     padding-bottom: 20px;
-    background-color: darkturquoise;
+    padding-top: 10px;
+    background-color: rgb(73, 71, 84);
+    margin: 0 auto;
 }
 
 #display {
-    background-color: green;
+    background-color: rgb(153, 181, 152);
+    border-style: solid;
+    border-color: rgb(190, 196, 195);
+    border-width: 5px;
+    border-radius: 5px;
     width: 150px;
+    font-family: 'Press Start 2P';
+    text-align: right;
+    margin-bottom: 10px;
 }
 
 
 .row {
-    width: 150px;
+    width: 160px;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
 button {
-    width: 30px;
+    width: 40px;
+    height: 35px;
+    font-family: 'Press Start 2P';
+    border-radius: 5px;
+}
+
+#clear {
+    width: 160px;
+    background-color: rgb(222, 118, 80);
 }
