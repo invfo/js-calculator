@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'MaSuperPolice';
-    
-    
+
+
     src: url('MaSuperPolice.eot') format('eot'),
          url('MaSuperPolice.woff') format('woff'),
          url('MaSuperPolice.ttf') format('truetype'),
@@ -31,6 +31,7 @@
     font-family: 'Press Start 2P';
     text-align: right;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 
