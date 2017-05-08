@@ -119,3 +119,11 @@ class TestCalculator():
         self.push_button('2')
         self.push_button('=')
         assert self.get_display_content() == '-5'
+        
+    def test_input_after_zero_result(self):
+        self.push_button('1')
+        self.push_button('-')
+        self.push_button('1')
+        self.push_button('=')
+        self.push_button('3')
+        assert self.get_display_content() == '3'

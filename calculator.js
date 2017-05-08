@@ -52,6 +52,9 @@ equalButton.addEventListener('click', function(e) {
                 break;
         }
         
+        if (result == 0) {
+            startNewInput = true;
+        }
         memorizedValue = null;
         lastOperation = null;
         displayedValue = result;
