@@ -55,3 +55,21 @@ class TestCalculator():
         self.push_button('1')
         self.push_button('clear')
         assert self.get_display_content() == '0'
+        
+    def test_when_press_one_then_plus_displays_one(self):
+        self.push_button('1')
+        self.push_button('+')
+        assert self.get_display_content() == '1'
+    
+    def test_when_press_one_plus_two_displays_two(self):
+        self.push_button('1')
+        self.push_button('+')
+        self.push_button('2')
+        assert self.get_display_content() == '2'
+        
+    def test_when_press_one_plus_one_equals_display_two(self):
+        self.push_button('1')
+        self.push_button('+')
+        self.push_button('1')
+        self.push_button('=')
+        assert self.get_display_content() == '2'
