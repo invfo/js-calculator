@@ -90,7 +90,7 @@ class TestCalculator():
 
     def test_multiplication(self):
         self.push_button('2')
-        self.push_button('x')
+        self.push_button('*')
         self.push_button('4')
         self.push_button('=')
         assert self.get_display_content() == '8'
@@ -100,7 +100,7 @@ class TestCalculator():
         self.push_button('+')
         self.push_button('5')
         self.push_button('=')
-        self.push_button('x')
+        self.push_button('*')
         self.push_button('3')
         self.push_button('=')
         assert self.get_display_content() == '21'

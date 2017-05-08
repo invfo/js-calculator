@@ -19,7 +19,7 @@ function manageDigitInput(e) {
         }
     } else {
         if (! (digit == '.' && displayedValue.includes('.'))) {
-            displayedValue += digit;  
+            displayedValue += digit;
         }
     }
 
@@ -40,15 +40,6 @@ clearButton.addEventListener('click', function(e) {
     displayedValue = '0';
     document.querySelector('p').textContent = displayedValue;
 });
-
-
-plusButton = document.getElementById('+');
-plusButton.addEventListener('click', function(e) {
-    memorizedValue = displayedValue;
-    lastOperation = '+'
-    startNewInput = true;
-});
-
 
 equalButton = document.getElementById('=');
 equalButton.addEventListener('click', function(e) {
@@ -88,7 +79,27 @@ equalButton.addEventListener('click', function(e) {
     }
 });
 
-multiplyButton = document.getElementById('x');
+
+var operationButtons = document.getElementsByClassName('operation');
+for (var i = 0; i < operationButtons.length; i++) {
+    var buttonElt = operationButtons[i];
+    buttonElt.addEventListener('click', function(e) {
+        memorizedValue = displayedValue;
+        lastOperation = e.target.id;
+        startNewInput = true;
+    })
+}
+
+/*
+
+plusButton = document.getElementById('+');
+plusButton.addEventListener('click', function(e) {
+    memorizedValue = displayedValue;
+    lastOperation = '+'
+    startNewInput = true;
+});
+
+multiplyButton = document.getElementById('*');
 multiplyButton.addEventListener('click', function(e) {
     memorizedValue = displayedValue;
     lastOperation = '*'
@@ -108,3 +119,4 @@ divideButton.addEventListener('click', function(e) {
     lastOperation = '/'
     startNewInput = true;
 });
+*/
