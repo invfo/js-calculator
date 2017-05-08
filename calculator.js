@@ -89,34 +89,3 @@ for (var i = 0; i < operationButtons.length; i++) {
         startNewInput = true;
     })
 }
-
-/*
-
-plusButton = document.getElementById('+');
-plusButton.addEventListener('click', function(e) {
-    memorizedValue = displayedValue;
-    lastOperation = '+'
-    startNewInput = true;
-});
-
-multiplyButton = document.getElementById('*');
-multiplyButton.addEventListener('click', function(e) {
-    memorizedValue = displayedValue;
-    lastOperation = '*'
-    startNewInput = true;
-});
-
-subtractButton = document.getElementById('-');
-subtractButton.addEventListener('click', function(e) {
-    memorizedValue = displayedValue;
-    lastOperation = '-'
-    startNewInput = true;
-});
-
-divideButton = document.getElementById('/');
-divideButton.addEventListener('click', function(e) {
-    memorizedValue = displayedValue;
-    lastOperation = '/'
-    startNewInput = true;
-});
-*/
