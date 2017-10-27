@@ -184,3 +184,13 @@ class TestCalculator():
         self.push_button('.')
         self.push_button('.')
         assert self.get_display_content() == '1.'
+
+    def test_can_sum_float_and_int(self):
+        self.push_button('1')
+        self.push_button('/')
+        self.push_button('2')
+        self.push_button('=')
+        self.push_button('+')
+        self.push_button('1')
+        self.push_button('=')
+        assert self.get_display_content() == '1.5'

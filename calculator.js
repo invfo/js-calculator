@@ -49,16 +49,16 @@ equalButton.addEventListener('click', function(e) {
 
         switch(lastOperation) {
             case '+':
-                result = parseInt(displayedValue) + parseInt(memorizedValue);
+                result = parseFloat(displayedValue) + parseFloat(memorizedValue);
                 break;
             case '*':
-                result = parseInt(displayedValue) * parseInt(memorizedValue);
+                result = parseFloat(displayedValue) * parseFloat(memorizedValue);
                 break;
             case '-':
-                result = parseInt(memorizedValue) - parseInt(displayedValue);
+                result = parseFloat(memorizedValue) - parseFloat(displayedValue);
                 break;
             case '/':
-                result = parseInt(memorizedValue) / parseInt(displayedValue);
+                result = parseFloat(memorizedValue) / parseFloat(displayedValue);
                 result = +result.toFixed(5);
                 break;
         }
